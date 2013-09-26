@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hobhubs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+<link href="css/style.css" rel="stylesheet" media="screen">
+</head>
+<body class="white_bg">
+<header>
+<div class="head_bg navbar-fixed-top">
+<div class="row-fluid">
+<div class="span12 hobhubs_logo">
+<img src="img/hobhubs_logo.png">
+</div>
+</div>
+</div>
+</header>
+<div class="container-fluid">
+<div class="row-fluid">
+
+</div>
+</div>
+
+
+
+<script src="js/jQuery v1.10.2.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("[name=toggler]").click(function(){
+            $('.toHide').hide('slow');
+            $("#blk-"+$(this).val()).show('slow');
+    });
+ });
+</script>
+</body>
+</html>
