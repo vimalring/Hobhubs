@@ -1,0 +1,55 @@
+<?php
+
+
+
+/*
+
+user Verified scipt version 0.1 
+Version Name:Kitten (bcoz i love kittens)
+now e-mail is sent via smtp 
+
+*/
+
+
+//database connection
+
+include ('./../includes/connect.php');
+
+//security module
+include('./../includes/security.php');
+
+
+
+$token=$_GET['token'];
+
+
+$sql="SELECT * FROM hob_temp_user WHERE token='$token'";
+
+
+$result=mysql_query($sql);
+
+if(!$result)
+{
+
+die('Database Error')
+
+}
+
+else if(mysql_num_rows($result)=0)
+{
+
+echo 'Sorry Mate , We are Unable to verify the E-mail or E-mail already Registered';
+die();
+
+}
+
+
+
+$user_data=mysql_fetch_array($result);
+
+extract($user_data);
+
+$sql="INSERT into hob_users "
+
+
+
