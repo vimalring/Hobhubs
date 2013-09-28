@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hobhubs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+<link href="css/style.css" rel="stylesheet" media="screen">
+</head>
+<body>
+<header>
+<div class="head_bg navbar-fixed-top">
+<div class="row-fluid">
+<div class="span4  hobhubs_logo">
+<img src="img/hobhubs_logo.png">
+</div>
+</div>
+</div>
+</header>
+<!-- popup form start --> 
+<a href="#x" class="overlay" id="login_form"></a>
+<div class="popup login_box">
+
+</div>
+<!-- popup form end --> 
+<div class="login_box">
+<div class="row-fluid">
+<h4 class="lp_color">Lost Password Reset</h4>
+<p class="text-info">Please enter your desired new password below</p>
+<form action="user/register.php" method="post" name="login_form" >
+<div id="myform">      
+<input name="username" type="password" class="input_username span12 padding2 " placeholder="Password" id="password" title="Password should contain atleast 1 (special characters, Numbers, Uppercase & Lowercase Letter)" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])^\D.{6,}"  />
+</div>
+<input name="password" type="password" class="input_password span12 padding2" placeholder="Confirm  Password" id="passwordconf"  oninput="check(this)" required 
+pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])^\D.{6,}" />
+<p></p>
+<a href="#close"> <input type="button" value="Save Changes" class=" hh_button span6 "></a>
+<input type="submit" value="Cancel" class="hh_button span6  " >
+</form>
+</div>
+</div>
+<script src="js/jQuery v1.10.2.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+// select all desired input fields and attach tooltips to them
+$("#myform :input").tooltip({
+// place tooltip on the right edge
+position: "center right",
+// a little tweaking of the position
+offset: [-2, 10],
+// use the built-in fadeIn/fadeOut effect
+effect: "fade",
+// custom opacity setting
+opacity: 0.7
+});
+</script> 
+<script language='javascript' type='text/javascript'>
+function check(input) {
+if (input.value != document.getElementById('password').value) {
+input.setCustomValidity('The two passwords must match.');
+} else {
+input.setCustomValidity('');}}
+</script>
+</body>
+</html>
